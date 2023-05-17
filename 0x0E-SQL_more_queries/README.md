@@ -1,1 +1,1 @@
-0x0E. SQL - More queries
+VimCrypt~03!Š	¥*p ûÜx!î™$zì–E²äÇ~Ò¢O;·Ó¥í4ÚØg
