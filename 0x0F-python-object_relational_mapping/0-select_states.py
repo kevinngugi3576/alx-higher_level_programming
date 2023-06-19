@@ -5,17 +5,22 @@ Usage: ./0-select_states.py <mysql username> \
                             <mysql password> \
                             <database name>
 """
-import sys
 import MySQLdb
+import sys
 
-if __name__ == '__main__':
-    conn = MySQLdb.connect(
-        host="localhost", port=3306, user=sys.argv[1],
-        passwd=sys.argv[2], db=sys.argv[3])
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
+def main():
+    host = "localhost"
+    port = 3306
+    user = sys.argv[2]
+    password = "root"
+    db = "alx_python"
+
+    connection = MySQLdb.connect(host=host, port=port, user=user, password=password, db=db)
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT name FROM states")
+    for row in cursor:
+        print(row[0])
+
+if __name__ == "__main__":
+    main()
